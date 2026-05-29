@@ -34,7 +34,7 @@ public class Course {
     private Long id;
 
     @Length(min = 2, max = 100)
-    @Nonnull
+    //@Nonnull
     @NotBlank
     @Column(length = 100, nullable = false)
     private String name;
