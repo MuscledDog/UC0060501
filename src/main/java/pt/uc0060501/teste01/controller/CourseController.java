@@ -19,6 +19,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import pt.uc0060501.teste01.model.Course;
 import pt.uc0060501.teste01.service.CourseService;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -54,4 +56,10 @@ private CourseController(CourseService service){
 public void delete(@PathVariable @NonNull @Positive Long id) {
     this.service.deleteCourse(id);
     }
+
+@PutMapping("path/{id}")
+public Course putMethodName(@PathVariable @NonNull @Positive Long id, @RequestBody @Valid Course course) {    
+    return this.service.updateCourse(id, course);
+    }
 }
+
